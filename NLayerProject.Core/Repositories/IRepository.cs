@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace NLayerProject.Core.Repositories
 {
-    interface IRepository<IEntity> where IEntity : class
+    interface IRepository<TEntity> where TEntity : class
     {
-        Task<IEntity> GetByIdAsync(int Id);
+        Task<TEntity> GetByIdAsync(int Id);
 
-        Task<IEnumerable<IEntity>> GetAllAsync();
+        Task<IEnumerable<TEntity>> GetAllAsync();
 
-        Task<IEnumerable<IEntity>> Find(Expression<Func<IEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
 
-        Task<IEntity> SingleOrDefaultAsync(Expression<Func<IEntity, bool>> predicate);
+        Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
 
-        Task AddAsync(IEntity entity);
+        Task AddAsync(TEntity entity);
 
-        Task AddRangeAsync(IEnumerable<IEntity> entities);
+        Task AddRangeAsync(IEnumerable<TEntity> entities);
 
-        void Remove(IEntity entity);
+        void Remove(TEntity entity);
 
-        void RemoveRange(IEnumerable<IEntity> entities);
+        void RemoveRange(IEnumerable<TEntity> entities);
 
-        IEntity Update(IEntity entity);
+        TEntity Update(TEntity entity);
     }
 }
