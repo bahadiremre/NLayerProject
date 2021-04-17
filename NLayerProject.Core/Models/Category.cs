@@ -13,6 +13,5 @@ namespace NLayerProject.Core.Models
         public string Name { get; set; }
         public bool IsDeleted { get; set; }
         public Collection<Product> Products { get; set; }
-
     }
 }
