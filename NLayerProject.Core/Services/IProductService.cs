@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NLayerProject.Core.Services
 {
-    interface IProductService : IService<Product>
+    public interface IProductService : IService<Product>
     {
         Task<Product> GetWithCategoryById(int productId);
     }
